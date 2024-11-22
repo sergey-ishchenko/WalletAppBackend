@@ -1,0 +1,17 @@
+﻿version: '3.8'
+
+services:
+  wallet-db:
+    image: postgres:latest
+    container_name: wallet-db
+    environment:
+        - POSTGRES_DB=WalletDb
+        - POSGRES_USER=postgres
+        - POSTGRES_PASSWORD=postgres
+    volumes:
+        - ./.containers/wallet-db:/var/lib/postgresql/data
+    ports:
+        - 5432:5432
+    restart: always 
+  
+  
